@@ -1,0 +1,120 @@
+{
+  "personal": {
+    "name": "Yunus Emre Gündüz",
+    "role": "Senior Full Stack Developer",
+    "location": "Sakarya, Türkiye",
+    "email": "yegunduz@outlook.com",
+    "phone": "0530 928 9942",
+    "linkedin": "https://www.linkedin.com/in/yunus-emre-gunduz/",
+    "github": "https://github.com/yemregunduz",
+    "sourceCode": "https://github.com/yemregunduz/YegCvApp",
+    "status": "online"
+  },
+  "summary": {
+    "identity": "Yunus Emre Gündüz",
+    "role": "Senior Full Stack Developer",
+    "location": "Sakarya, Türkiye",
+    "interests": ["Frontend Development", "Backend Development"],
+    "contact": {
+      "email": "yegunduz@outlook.com",
+      "phone": "0530 928 9942",
+      "linkedin": "https://www.linkedin.com/in/yunus-emre-gunduz/"
+    },
+    "available_for_hire": true
+  },
+  "navigation": [
+    { "href": "#terminal", "label": "Terminal" }
+  ],
+  "stacks": [
+    {
+      "icon": "FiServer",
+      "title": "Backend",
+      "techs": "C#, .NET Core, Entity Framework, SQL Server, RabbitMQ",
+      "proficiency": 95,
+      "label": "PRO"
+    },
+    {
+      "icon": "FiMonitor",
+      "title": "Frontend",
+      "techs": "Angular, AngularJS, ASP.NET Core MVC, Javascript, Typescript, HTML5, Css Frameworks (Bootstrap, Tailwind, CoreUI vs.)",
+      "proficiency": 95,
+      "label": "PRO"
+    },
+    {
+      "icon": "FiDatabase",
+      "title": "Database",
+      "techs": "MsSQL, PostgreSQL, MongoDB, Redis",
+      "proficiency": 85,
+      "label": "PRO"
+    }
+  ],
+  "experiences": [
+    {
+      "period": "05.2023 → DEVAM EDİYOR",
+      "role": "Senior Full Stack Developer @ Mikrogrup",
+      "description": "NET Core backend ve ASP.NET MVC, AngularJS, hybrid Angular 11 frontend üzerinde çalıştım. E-fatura uygulamasına yeni özellikler ekledim, mevcut modülleri modern tasarım standartlarına göre güncelledim ve frontend tarafını component tabanlı hâle getirdim. Ayrıca code review'lar yaparak kod kalitesini artırdım ve frontend-backend entegrasyonlarını yöneterek performans optimizasyonuna katkıda bulundum.",
+      "highlight": true
+    },
+    {
+      "period": "02.2023 → 05.2023",
+      "role": "Full Stack Developer @ Firisbe Payment Systems",
+      "description": "Angular tabanlı frontend'den React'e geçiş sürecinde teknik analiz ve planlamayı yaptım. React tarafında yeni modüller geliştirdim ve mevcut modülleri dönüştürdüm. Backend'de servis worker'ları RabbitMQ sistemi ile değiştirme sürecine katkıda bulundum ve teknoloji geçişi sırasında kod kalitesi, test süreçleri ve entegrasyonun sorunsuz ilerlemesini sağladım.",
+      "highlight": false
+    },
+    {
+      "period": "06.2022 → 02.2023",
+      "role": "Full Stack Developer @ Morphosium Yazılım ve Donanım",
+      "description": "Mikrogrup Portal ve farklı projelerde hem sıfırdan geliştirme hem de mevcut projelere entegrasyon süreçlerinde görev aldım. Proje gereksinimlerini analiz ederek backend, frontend ve veritabanı geliştirmelerini gerçekleştirdim, karşılaşılan hataları hızlı ve etkili şekilde çözdüm. Agile metodolojileri ile ekip koordinasyonunu sağlayarak projelerin sorunsuz ilerlemesine katkıda bulundum.",
+      "highlight": false
+    },
+    {
+      "period": "10.2021 → 03.2022",
+      "role": "Full Stack Developer @ Nuevo Softwarehouse",
+      "description": "Mikrogrup Portal ve farklı projelerde hem sıfırdan geliştirme hem de mevcut projelere entegrasyon süreçlerinde görev aldım. Proje gereksinimlerini analiz ederek backend, frontend ve veritabanı geliştirmelerini gerçekleştirdim, karşılaşılan hataları hızlı ve etkili şekilde çözdüm. Agile metodolojileri ile ekip koordinasyonunu sağlayarak projelerin sorunsuz ilerlemesine katkıda bulundum.",
+      "highlight": false
+    }
+  ],
+  "education": [
+    {
+      "icon": "FiBookOpen",
+      "title": "Matematik Mühendisliği",
+      "subtitle": "Yıldız Teknik üniversitesi",
+      "year": "2018 - 2025",
+      "color": "#8b5cf6"
+    },{
+      "icon": "FiAward",
+      "title": "Yazılım Geliştirme Uzmanlığı",
+      "subtitle": "BTK Akademi",
+      "year": "2020 - 2021",
+      "color": "#ec4899"
+    }
+  ],
+  "contact": {
+    "greeting": "Merhaba! Terminal üzerinden beni tanımak ister misiniz?",
+    "commands": [
+      { "command": "ping yunusemre", "description": "Beni tanı" },
+      { "command": "show skills", "description": "Yetenekleri göster" },
+      { "command": "show experience", "description": "İş deneyimlerini göster" },
+      { "command": "show education", "description": "Eğitim bilgilerini göster" },
+      { "command": "show summary", "description": "Özet bilgilerini göster" },
+      { "command": "show cv", "description": "CV'yi göster" },
+      { "command": "download cv", "description": "CV'yi indir" },
+      { "command": "open linkedin", "description": "LinkedIn profilini aç" },
+      { "command": "open github", "description": "GitHub profilini aç" },
+      { "command": "copy email", "description": "E-posta adresini kopyala" },
+      { "command": "copy phone", "description": "Telefon numarasını kopyala" },
+      { "command": "clear", "description": "Terminali temizle" }
+    ],
+    "pingResponse": [
+      { "key": "name", "value": "Yunus Emre Gündüz", "type": "string" },
+      { "key": "role", "value": "Senior Full Stack Developer", "type": "string" },
+      { "key": "location", "value": "Sakarya, Türkiye", "type": "string" },
+      { "key": "email", "value": "yegunduz@outlook.com", "type": "link", "href": "mailto:yegunduz@outlook.com" },
+      { "key": "phone", "value": "0530 928 9942", "type": "link", "href": "tel:+905309289942" },
+      { "key": "linkedin", "value": "linkedin.com/in/yunus-emre-gunduz", "type": "link", "href": "https://www.linkedin.com/in/yunus-emre-gunduz/" },
+      { "key": "github", "value": "github.com/yemregunduz", "type": "link", "href": "https://github.com/yemregunduz" },
+      { "key": "interests", "value": "Frontend Development, Backend Development", "type": "list" },
+      { "key": "availableForHire", "value": "true", "type": "success" }
+    ]
+  }
+}
