@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 // ── Animations ──
 
@@ -17,6 +17,24 @@ export const pulse = keyframes`
   50% { opacity: 0.4; }
 `
 
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+`
+
+const screenOff = keyframes`
+  0% { opacity: 1; }
+  50% { opacity: 1; transform: scaleY(1); }
+  80% { opacity: 0.8; transform: scaleY(0.005); }
+  100% { opacity: 0; transform: scaleY(0); }
+`
+
+const screenOn = keyframes`
+  0% { opacity: 0; transform: scaleY(0); }
+  40% { opacity: 0.8; transform: scaleY(0.005); }
+  100% { opacity: 1; transform: scaleY(1); }
+`
+
 // ── Layout ──
 
 export const Section = styled.section`
@@ -27,6 +45,15 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   padding: 12px;
+
+  ${({ $fullscreen }) =>
+    $fullscreen &&
+    css`
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      padding: 0;
+    `}
 `
 
 export const TerminalWindow = styled.div`
@@ -40,6 +67,13 @@ export const TerminalWindow = styled.div`
   min-height: 0;
   display: flex;
   flex-direction: column;
+
+  ${({ $fullscreen }) =>
+    $fullscreen &&
+    css`
+      border-radius: 0;
+      border: none;
+    `}
 
   &::after {
     content: '';
@@ -75,6 +109,37 @@ export const Dot = styled.span`
   height: 10px;
   border-radius: 50%;
   background: ${({ $color }) => $color};
+`
+
+export const DotButton = styled.button`
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: ${({ $color }) => $color};
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.6);
+
+  svg {
+    width: 8px;
+    height: 8px;
+    stroke-width: 3;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px ${({ $color }) => $color}80;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `
 
 export const HeaderTitle = styled.span`
@@ -242,4 +307,93 @@ export const SuggestionChip = styled.button`
     border-color: ${({ theme }) => theme.colors.cyan};
     color: ${({ theme }) => theme.colors.cyan};
   }
+`
+
+// ── Shutdown / Boot ──
+
+export const ShutdownScreen = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  min-height: 0;
+
+  ${({ $phase }) =>
+    $phase === 'shutting-down' &&
+    css`
+      animation: ${screenOff} 0.6s ease-in forwards;
+      animation-delay: 2s;
+    `}
+
+  ${({ $phase }) =>
+    $phase === 'booting' &&
+    css`
+      animation: ${screenOn} 0.6s ease-out forwards;
+    `}
+
+  ${({ $phase }) =>
+    $phase === 'off' &&
+    css`
+      background: #000;
+    `}
+`
+
+export const ShutdownContent = styled.div`
+  padding: 40px;
+  width: 100%;
+  font-size: 0.8rem;
+  line-height: 2;
+`
+
+export const ShutdownLine = styled.div`
+  color: ${({ theme }) => theme.colors.green};
+  animation: ${fadeIn} 0.3s ease;
+`
+
+export const ShutdownCursor = styled.span`
+  color: ${({ theme }) => theme.colors.green};
+  animation: ${blink} 0.8s step-end infinite;
+`
+
+export const ShutdownLogo = styled.div`
+  font-size: 3rem;
+  color: #333;
+  animation: ${pulse} 2s infinite;
+`
+
+// ── Dock (Minimized) ──
+
+export const DockBar = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: ${({ theme }) => theme.colors.bgCard};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto auto 0;
+  transition: all 0.3s;
+  box-shadow: ${({ theme }) => `0 4px 16px ${theme.colors.shadow}`};
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.cyan};
+    transform: translateY(-2px);
+    box-shadow: ${({ theme }) => `0 8px 24px ${theme.colors.shadow}`};
+  }
+`
+
+export const DockDot = styled.span`
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: ${({ $color }) => $color};
+`
+
+export const DockTitle = styled.span`
+  font-size: 0.7rem;
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-family: ${({ theme }) => theme.fonts.mono};
+  margin-left: 4px;
 `

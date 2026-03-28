@@ -40,6 +40,7 @@ Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayuzu** uzer
 - **Panoya Kopyala** — `copy email`, `copy phone` ile iletisim bilgilerini kopyala
 - **CV Indirme** — `download cv` ile PDF olarak indir, `show cv` ile goruntuyle
 - **Oneri Chipleri** — Komutlari yazmak yerine tek tikla calistir
+- **Terminal window eventleri** Kapat / Simge durumuna küçült / Tam ekran yap
 - **Tamamen Responsive** — Mobil ve masaustu uyumlu
 
 ## Komutlar
