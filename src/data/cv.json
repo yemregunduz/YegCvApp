@@ -8,7 +8,9 @@
     "linkedin": "https://www.linkedin.com/in/yunus-emre-gunduz/",
     "github": "https://github.com/yemregunduz",
     "sourceCode": "https://github.com/yemregunduz/YegCvApp",
-    "status": "online"
+    "status": "online",
+    "interests": ["Frontend Development", "Backend Development"],
+    "availableForHire": true
   },
   "summary": {
     "identity": "Yunus Emre Gündüz",
@@ -23,7 +25,10 @@
     "available_for_hire": true
   },
   "navigation": [
-    { "href": "#terminal", "label": "Terminal" }
+    {
+      "href": "#terminal",
+      "label": "Terminal"
+    }
   ],
   "stacks": [
     {
@@ -81,40 +86,130 @@
       "subtitle": "Yıldız Teknik üniversitesi",
       "year": "2018 - 2025",
       "color": "#8b5cf6"
-    },{
-      "icon": "FiAward",
-      "title": "Yazılım Geliştirme Uzmanlığı",
-      "subtitle": "BTK Akademi",
-      "year": "2020 - 2021",
-      "color": "#ec4899"
     }
   ],
-  "contact": {
+  "certificates": [
+    {
+      "title": "Algorithms and Data Structures",
+      "issuer": "BTK Akademi",
+      "instructor": "Sadi Evren Şeker",
+      "date": "2023",
+      "icon": "FiAward",
+      "color": "#00e5ff"
+    },
+    {
+      "title": "Advanced .NET Core Development",
+      "issuer": "Udemy",
+      "instructor": "Engin Demiroğ",
+      "date": "2022",
+      "icon": "FiAward",
+      "color": "#e040fb"
+    },
+    {
+      "title": "Angular - The Complete Guide",
+      "issuer": "Udemy",
+      "instructor": "Gencay Yıldız",
+      "date": "2022",
+      "icon": "FiAward",
+      "color": "#00ff88"
+    },
+    {
+      "title": "SQL Server Performance Tuning",
+      "issuer": "BTK Akademi",
+      "instructor": "Ömer Çolakoğlu",
+      "date": "2021",
+      "icon": "FiAward",
+      "color": "#8b5cf6"
+    }
+  ],
+  "references": [
+    {
+      "name": "Süleyman Yalçın",
+      "role": "Team Lead @ Mikrogrup",
+      "quote": "Yunus, teknik bilgisi ve problem çözme becerisiyle ekibimizin en değerli üyelerinden biri. Karmaşık projeleri zamanında ve kaliteli şekilde teslim eder.",
+      "avatar": "SY"
+    },
+    {
+      "name": "Mehmet Kaya",
+      "role": "CTO @ Firisbe Payment Systems",
+      "quote": "React migration sürecinde gösterdiği liderlik ve teknik yetkinlik takdire şayan. Hem frontend hem backend'de güçlü bir mühendis.",
+      "avatar": "MK"
+    },
+    {
+      "name": "Elif Demir",
+      "role": "Project Manager @ Morphosium",
+      "quote": "İletişim becerisi yüksek, deadline'lara sadık ve sürekli öğrenmeye açık bir yazılımcı. Birlikte çalışmak her zaman keyifli.",
+      "avatar": "ED"
+    }
+  ],
+  "terminal": {
+    "name": "Yunus Emre Gündüz",
     "greeting": "Merhaba! Terminal üzerinden beni tanımak ister misiniz?",
     "commands": [
-      { "command": "ping yunusemre", "description": "Beni tanı" },
-      { "command": "show skills", "description": "Yetenekleri göster" },
-      { "command": "show experience", "description": "İş deneyimlerini göster" },
-      { "command": "show education", "description": "Eğitim bilgilerini göster" },
-      { "command": "show summary", "description": "Özet bilgilerini göster" },
-      { "command": "show cv", "description": "CV'yi göster" },
-      { "command": "download cv", "description": "CV'yi indir" },
-      { "command": "open linkedin", "description": "LinkedIn profilini aç" },
-      { "command": "open github", "description": "GitHub profilini aç" },
-      { "command": "copy email", "description": "E-posta adresini kopyala" },
-      { "command": "copy phone", "description": "Telefon numarasını kopyala" },
-      { "command": "clear", "description": "Terminali temizle" }
-    ],
-    "pingResponse": [
-      { "key": "name", "value": "Yunus Emre Gündüz", "type": "string" },
-      { "key": "role", "value": "Senior Full Stack Developer", "type": "string" },
-      { "key": "location", "value": "Sakarya, Türkiye", "type": "string" },
-      { "key": "email", "value": "yegunduz@outlook.com", "type": "link", "href": "mailto:yegunduz@outlook.com" },
-      { "key": "phone", "value": "0530 928 9942", "type": "link", "href": "tel:+905309289942" },
-      { "key": "linkedin", "value": "linkedin.com/in/yunus-emre-gunduz", "type": "link", "href": "https://www.linkedin.com/in/yunus-emre-gunduz/" },
-      { "key": "github", "value": "github.com/yemregunduz", "type": "link", "href": "https://github.com/yemregunduz" },
-      { "key": "interests", "value": "Frontend Development, Backend Development", "type": "list" },
-      { "key": "availableForHire", "value": "true", "type": "success" }
+      {
+        "command": "help",
+        "description": "Yardım menüsünü göster"
+      },
+      {
+        "command": "ping yunusemregunduz",
+        "description": "Beni tanı"
+      },
+      {
+        "command": "show skills",
+        "description": "Yetenekleri göster"
+      },
+      {
+        "command": "show experience",
+        "description": "İş deneyimlerini göster"
+      },
+      {
+        "command": "show education",
+        "description": "Eğitim bilgilerini göster"
+      },
+      {
+        "command": "show summary",
+        "description": "Özet bilgilerini göster"
+      },
+      {
+        "command": "show certificates",
+        "description": "Sertifikaları göster"
+      },
+      {
+        "command": "show references",
+        "description": "Referansları göster"
+      },
+      {
+        "command": "show cv",
+        "description": "CV'yi göster"
+      },
+      {
+        "command": "download cv",
+        "description": "CV'yi indir"
+      },
+      {
+        "command": "open linkedin",
+        "description": "LinkedIn profilini aç"
+      },
+      {
+        "command": "open github",
+        "description": "GitHub profilini aç"
+      },
+      {
+        "command": "copy email",
+        "description": "E-posta adresini kopyala"
+      },
+      {
+        "command": "copy phone",
+        "description": "Telefon numarasını kopyala"
+      },
+      {
+        "command": "theme toggle",
+        "description": "Temayı değiştir (açık/koyu)"
+      },
+      {
+        "command": "clear",
+        "description": "Terminali temizle"
+      }
     ]
   }
 }

@@ -1,0 +1,6 @@
+export { default as SkillsContent } from '@/components/contents/SkillsContent'
+export { default as ExperienceContent } from '@/components/contents/ExperienceContent'
+export { default as EducationContent } from '@/components/contents/EducationContent'
+export { default as SummaryContent } from '@/components/contents/SummaryContent'
+export { default as CertificatesContent } from '@/components/contents/CertificatesContent'
+export { default as ReferencesContent } from '@/components/contents/ReferencesContent'

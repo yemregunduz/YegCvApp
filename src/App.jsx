@@ -1,38 +1,29 @@
 import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
-import theme from './styles/theme'
-import GlobalStyles from './styles/GlobalStyles'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Terminal from './components/Terminal'
+import GlobalStyles from '@/styles/GlobalStyles'
+import { ThemeContextProvider, useTheme } from '@/hooks/useTheme'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import Terminal from '@/components/Terminal'
 
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 `
 
 const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-height: 0;
   padding-top: 60px;
-
-  > * {
-    padding: 1rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  @media (max-width: 768px) {
-    > * {
-      padding: 2rem 1rem;
-    }
-  }
 `
 
-function App() {
+function AppInner() {
+  const { theme } = useTheme()
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -44,6 +35,14 @@ function App() {
         <Footer />
       </AppWrapper>
     </ThemeProvider>
+  )
+}
+
+function App() {
+  return (
+    <ThemeContextProvider>
+      <AppInner />
+    </ThemeContextProvider>
   )
 }
 

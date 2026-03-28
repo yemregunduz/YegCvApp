@@ -1,4 +1,13 @@
-const theme = {
+const shared = {
+  fonts: {
+    mono: "'JetBrains Mono', 'Courier New', monospace",
+    sans: "'Space Grotesk', sans-serif",
+  },
+}
+
+export const darkTheme = {
+  ...shared,
+  mode: 'dark',
   colors: {
     bgPrimary: '#0a0a0f',
     bgSecondary: '#111118',
@@ -12,11 +21,36 @@ const theme = {
     textSecondary: '#888',
     textMuted: '#555',
     border: '#1e1e2e',
-  },
-  fonts: {
-    mono: "'JetBrains Mono', 'Courier New', monospace",
-    sans: "'Space Grotesk', sans-serif",
+    navBg: 'rgba(10, 10, 15, 0.9)',
+    overlay: 'rgba(0, 0, 0, 0.75)',
+    cyanAlpha8: 'rgba(0, 229, 255, 0.08)',
+    cyanAlpha3: 'rgba(0, 229, 255, 0.03)',
+    shadow: 'rgba(0, 0, 0, 0.5)',
+    shadowAccent: 'rgba(0, 229, 255, 0.1)',
   },
 }
 
-export default theme
+export const lightTheme = {
+  ...shared,
+  mode: 'light',
+  colors: {
+    bgPrimary: '#f8f9fc',
+    bgSecondary: '#eef1f8',
+    bgCard: '#ffffff',
+    bgCardHover: '#f1f4fb',
+    cyan: '#0284c7',
+    magenta: '#a21caf',
+    green: '#059669',
+    purple: '#6d28d9',
+    textPrimary: '#0f172a',
+    textSecondary: '#475569',
+    textMuted: '#94a3b8',
+    border: '#e2e8f0',
+    navBg: 'rgba(248, 249, 252, 0.85)',
+    overlay: 'rgba(15, 23, 42, 0.4)',
+    cyanAlpha8: 'rgba(2, 132, 199, 0.1)',
+    cyanAlpha3: 'rgba(2, 132, 199, 0.04)',
+    shadow: 'rgba(15, 23, 42, 0.08)',
+    shadowAccent: 'rgba(2, 132, 199, 0.12)',
+  },
+}

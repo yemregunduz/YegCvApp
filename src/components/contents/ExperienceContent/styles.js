@@ -1,8 +1,6 @@
 import styled from 'styled-components'
-import { FiGitCommit } from 'react-icons/fi'
-import cvData from '../../data/cv.json'
 
-const Timeline = styled.div`
+export const Timeline = styled.div`
   position: relative;
   padding-left: 3rem;
 
@@ -17,13 +15,15 @@ const Timeline = styled.div`
   }
 `
 
-const TimelineItem = styled.div`
+export const TimelineItem = styled.div`
   position: relative;
-  margin-bottom: 3rem;
-  &:last-child { margin-bottom: 0; }
+  margin-bottom: 1.5rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
 `
 
-const Marker = styled.div`
+export const Marker = styled.div`
   position: absolute;
   left: -3rem;
   top: 0;
@@ -38,42 +38,23 @@ const Marker = styled.div`
   z-index: 1;
 `
 
-const Period = styled.span`
+export const Period = styled.span`
   font-size: 0.65rem;
   color: ${({ theme }) => theme.colors.cyan};
   letter-spacing: 2px;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 `
 
-const Role = styled.h3`
+export const Role = styled.h3`
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.75rem;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  margin-bottom: 0.25rem;
 `
 
-const Description = styled.p`
+export const Description = styled.p`
   font-size: 0.72rem;
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.7;
 `
-
-export default function ExperienceContent() {
-  return (
-    <Timeline>
-      {cvData.experiences.map((exp, i) => (
-        <TimelineItem key={i}>
-          <Marker $highlight={exp.highlight}>
-            <FiGitCommit />
-          </Marker>
-          <div>
-            <Period>{exp.period}</Period>
-            <Role>{exp.role}</Role>
-            {exp.description && <Description>{exp.description}</Description>}
-          </div>
-        </TimelineItem>
-      ))}
-    </Timeline>
-  )
-}
