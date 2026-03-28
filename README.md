@@ -1,6 +1,6 @@
 # Terminal CV - Yunus Emre Gündüz
 
-Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayuzu** uzerinden kesfedilebilen, interaktif bir CV uygulaması gelistirdim. Gercek bir terminal deneyimi sunan bu uygulama, komut satirindan CV bilgilerine ulasmayi saglıyor.
+Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayüzü** üzerinden keşfedebien, interaktif bir CV uygulaması geliştirdim. Gerek bir terminal deneyimi sunan bu uygulama, komut satırından CV bilgilerine ulaşmayı sağlıyor.
 
 ## Önizlenim
 
