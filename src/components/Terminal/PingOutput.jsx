@@ -36,8 +36,11 @@ const SectionHeader = styled.div`
 const Row = styled.div`
   margin-left: 20px;
   display: flex;
-  align-items: center;
   gap: 4px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `
 
 const SkillBar = styled.span`
@@ -45,6 +48,10 @@ const SkillBar = styled.span`
   align-items: center;
   gap: 6px;
   margin-left: 8px;
+
+  @media (max-width: 768px) {
+    margin-left:0;
+  }
 `
 
 const BarTrack = styled.span`
