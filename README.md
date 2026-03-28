@@ -124,7 +124,7 @@ cd YegCvApp
 # Bagimliliklari yukle
 npm install
 
-# Gelistirme sunucusu
+# Development server
 npm run dev
 
 # Production build
