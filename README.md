@@ -1,8 +1,8 @@
-# Terminal CV - Yunus Emre Gunduz
+# Terminal CV - Yunus Emre Gündüz
 
 Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayuzu** uzerinden kesfedilebilen, interaktif bir CV uygulaması gelistirdim. Gercek bir terminal deneyimi sunan bu uygulama, komut satirindan CV bilgilerine ulasmayi saglıyor.
 
-## Onizlenim
+## Önizlenim
 
 ```
 ~/yunusemre $ ping yunusemre
@@ -28,7 +28,7 @@ Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayuzu** uzer
   Matematik Muhendisliği — Yildiz Teknik Universitesi (2018 - 2025)
 ```
 
-## Ozellikler
+## Özellikler
 
 - **Terminal Arayuzu** — Gercek bir terminal gibi komut yazarak CV'yi kesfet
 - **Ping Komutu** — `ping yunusemre` ile tum CV bilgilerini tek seferde gor
@@ -74,7 +74,7 @@ Klasik CV'lerden sıkıldım. Bunun yerine hobi olarak **terminal arayuzu** uzer
 - **Lucide React** — Ikon kutuphanesi
 - **Prettier** — Kod formatlama
 
-## Proje Yapisi
+## Proje Yapısı
 
 ```
 src/
@@ -134,7 +134,7 @@ npm run build
 npm run format
 ```
 
-## Ozellestirme
+## Özelleştirme
 
 Tum CV verileri `src/data/cv.json` dosyasında merkezi olarak tutulur. Kendi bilgilerinizi eklemek icin bu dosyayı düzenleyin:
 
