@@ -1,17 +1,25 @@
 import { useState, useCallback } from 'react'
 
-export function useAutocomplete(items = []) {
+export function useAutocomplete(items = [], options = { includeExact: true}) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [active, setActive] = useState(false)
 
-  const getSuggestions = useCallback(
-    (input) => {
-      const trimmed = input.trim().toLowerCase()
-      if (!trimmed) return []
-      return items.filter((item) => item.toLowerCase().startsWith(trimmed) && item !== trimmed)
-    },
-    [items],
-  )
+const getSuggestions = useCallback(
+  (input) => {
+    const trimmed = input.trim().toLowerCase()
+    if (!trimmed) return []
+
+    return items.filter((item) => {
+      const lower = item.toLowerCase()
+      if (!lower.startsWith(trimmed)) return false
+
+      if (!options.includeExact && lower === trimmed) return false
+
+      return true
+    })
+  },
+  [items, options.includeExact],
+)
 
   const reset = useCallback(() => {
     setSelectedIndex(0)
