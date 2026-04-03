@@ -23,7 +23,7 @@ export const Window = styled.div`
   border-radius: 10px;
   width: 100%;
   max-width: 900px;
-  max-height: 85vh;
+  max-height: 85dvh;
   overflow: hidden;
   animation: ${slideUp} 0.3s ease;
   display: flex;
