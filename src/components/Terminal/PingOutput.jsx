@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import styled from 'styled-components'
 import cvData from '@/data/cv.json'
 import {
@@ -41,39 +42,6 @@ const Row = styled.div`
   @media (max-width: 768px) {
     flex-wrap: wrap;
   }
-`
-
-const SkillBar = styled.span`
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 8px;
-
-  @media (max-width: 768px) {
-    margin-left:0;
-  }
-`
-
-const BarTrack = styled.span`
-  display: inline-block;
-  width: 100px;
-  height: 8px;
-  background: ${({ theme }) => theme.colors.border};
-  border-radius: 4px;
-  overflow: hidden;
-`
-
-const BarFill = styled.span`
-  display: block;
-  height: 100%;
-  width: ${({ $pct }) => $pct}%;
-  background: ${({ theme }) => theme.colors.cyan};
-  border-radius: 4px;
-`
-
-const BarLabel = styled.span`
-  color: ${({ theme }) => theme.colors.textMuted};
-  font-size: 0.65rem;
 `
 
 const ExpPeriod = styled.span`
@@ -192,13 +160,7 @@ function PingOutput({ copiedKey, onCopy }) {
         <Row key={stack.title}>
           <TermKey>{stack.title.toLowerCase().padEnd(10)}</TermKey>
           <Separator> : </Separator>
-          <Value>{stack.techs}</Value>
-          <SkillBar>
-            <BarTrack>
-              <BarFill $pct={stack.proficiency} />
-            </BarTrack>
-            <BarLabel>{stack.proficiency}%</BarLabel>
-          </SkillBar>
+          <Value>{stack.techs.join(', ')}</Value>
         </Row>
       ))}
 
@@ -231,4 +193,4 @@ function PingOutput({ copiedKey, onCopy }) {
   )
 }
 
-export default PingOutput
+export default memo(PingOutput)

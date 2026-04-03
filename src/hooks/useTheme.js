@@ -8,7 +8,7 @@ const STORAGE_KEY = 'yeg-cv-theme'
 function getInitialMode() {
   const saved = localStorage.getItem(STORAGE_KEY)
   if (saved === 'light' || saved === 'dark') return saved
-  return  'dark'
+  return 'dark'
 }
 
 export function ThemeContextProvider({ children }) {

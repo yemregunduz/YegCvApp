@@ -107,6 +107,27 @@ export const DateBadge = styled.span`
   background: ${({ $color }) => $color}11;
 `
 
+export const VerifyLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1rem;
+  padding: 6px 14px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: ${({ $color }) => $color};
+  border: 1px solid ${({ $color }) => $color}44;
+  border-radius: 20px;
+  background: ${({ $color }) => $color}11;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    background: ${({ $color }) => $color}22;
+    border-color: ${({ $color }) => $color}88;
+  }
+`
+
 export const Ribbon = styled.div`
   position: absolute;
   top: 12px;

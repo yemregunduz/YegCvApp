@@ -6,6 +6,7 @@ import {
   CertificatesContent,
   ReferencesContent,
 } from '@/components/contents'
+import SnakeGame from '@/components/SnakeGame'
 
 export const POPUP_CONFIG = {
   skills: {
@@ -33,6 +34,11 @@ export const POPUP_CONFIG = {
   references: {
     title: 'REFERANSLAR',
     Content: ReferencesContent,
+  },
+  snake: {
+    title: 'SNAKE GAME 🐍',
+    Content: SnakeGame,
+    noPadding: true,
   },
 }
 

@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "label": "English",
+    "flag": "🇺🇸"
+  },
+
+  "greeting": "Hello! Would you like to get to know me through the terminal?",
+  "helpHint": "Type \"help\" to see available commands.",
+  "commandNotFound": "  bash: {cmd}: command not found. Type \"help\" to see available commands.",
+
+  "commands": {
+    "help": "Show help menu",
+    "ping yunusemregunduz": "Get to know me",
+    "ping yunusemre": "Get to know me",
+    "ping yunus": "Get to know me",
+    "show skills": "Show skills",
+    "show experience": "Show work experience",
+    "show education": "Show education",
+    "show summary": "Show summary",
+    "show certificates": "Show certificates",
+    "show references": "Show references",
+    "show cv": "Show CV",
+    "download cv": "Download CV",
+    "open linkedin": "Open LinkedIn profile",
+    "open github": "Open GitHub profile",
+    "copy email": "Copy email address",
+    "copy phone": "Copy phone number",
+    "theme toggle": "Toggle theme (light/dark)",
+    "theme light": "Switch to light theme",
+    "theme dark": "Switch to dark theme",
+    "neofetch": "Show system info",
+    "play": "Play Snake game 🐍",
+    "timeline": "Career timeline",
+    "sound toggle": "Toggle keyboard sound",
+    "sound on": "Enable keyboard sound",
+    "sound off": "Disable keyboard sound",
+    "lang en": "Switch to English",
+    "lang tr": "Türkçe'ye geç",
+    "clear": "Clear terminal",
+    "play song": "Play random chiptune melody 🎵",
+    "stop song": "Stop music",
+    "sudo hire me": "Easter egg 🥚",
+    "rm -rf boring-cv": "Easter egg 🥚",
+    "cat hobbies": "Easter egg 🥚"
+  },
+
+  "output": {
+    "skillsOpening": "  Skills loading...",
+    "experienceOpening": "  Work experience loading...",
+    "educationOpening": "  Education info loading...",
+    "summaryOpening": "  Summary loading...",
+    "certificatesOpening": "  Certificates loading...",
+    "referencesOpening": "  References loading...",
+    "linkedinRedirect": "  Redirecting... linkedin",
+    "githubRedirect": "  Redirecting... github",
+    "cvOpening": "  Opening CV...",
+    "cvDownloading": "  Downloading CV...",
+    "emailCopied": "  \"{email}\" copied to clipboard.",
+    "phoneCopied": "  \"{phone}\" copied to clipboard.",
+    "themeLight": "  Light theme applied.",
+    "themeDark": "  Dark theme applied.",
+    "themeToggled": "  Theme toggled.",
+    "playStarting": "  🐍 Starting Snake game...",
+    "soundOn": "  Keyboard sound enabled.",
+    "soundOff": "  Keyboard sound disabled.",
+    "langSwitched": "  Language changed: {lang}",
+    "songPlaying": "  🎵 Chiptune melody playing...",
+    "songStopped": "  🎵 Music stopped."
+  },
+
+  "easterEggs": {
+    "sudoHireMe": "  ✅ Root access granted. Congrats, you're hired! (If only it were that easy 😄)",
+    "rmRf": "  🗑️ Deleting boring-cv... Error: This CV isn't boring!",
+    "catHobbies": "  🎮 Gaming | 📚 Reading | 🎵 Music | ☕ Coffee | 🏋️ Sports | 🌍 Travel | 💻 Open Source"
+  },
+
+  "ping": {
+    "personal": "PERSONAL",
+    "skills": "SKILLS",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "name": "name",
+    "role": "role",
+    "location": "location",
+    "email": "email",
+    "phone": "phone",
+    "interests": "interests",
+    "available": "available",
+    "yes": "yes",
+    "no": "no"
+  },
+
+  "neofetch": {
+    "role": "Role",
+    "location": "Location",
+    "experience": "Experience",
+    "languages": "Languages",
+    "editor": "Editor",
+    "terminal": "Terminal",
+    "availableForHire": "Hire Me",
+    "yes": "Yes",
+    "no": "No",
+    "experienceValue": "~5 years",
+    "languagesValue": "Turkish, English"
+  },
+
+  "timeline": {
+    "title": "── CAREER TIMELINE ──",
+    "present": "NOW"
+  },
+
+  "dock": {
+    "minimized": "minimized"
+  },
+
+  "shutdown": {
+    "saving": "> Saving session...",
+    "closing": "> Closing connections...",
+    "stopping": "> Stopping processes...",
+    "complete": "> Shutdown complete.",
+    "booting": "> Booting system...",
+    "loading": "> Loading modules...",
+    "initializing": "> Initializing terminal...",
+    "ready": "> System ready."
+  },
+
+  "loader": {
+    "lines": [
+      "Initializing system...",
+      "Loading JetBrains Mono font...",
+      "Mounting terminal modules...",
+      "Connecting to server...",
+      "Compiling components..."
+    ],
+    "ready": "✓ System ready. Welcome."
+  }
+}

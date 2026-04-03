@@ -1,8 +1,10 @@
 import { useState, useCallback } from 'react'
-import { INITIAL_HISTORY } from '@/hooks/useCommands'
+import { createInitialHistory } from '@/hooks/useCommands'
+import { useLanguage } from '@/hooks/useLanguage'
 import { SHUTDOWN_LINES, BOOT_LINES } from '@/components/Terminal/constants'
 
 export function useWindowControls({ setHistory, setInput }) {
+  const { t } = useLanguage()
   const [isMinimized, setIsMinimized] = useState(false)
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [shutdown, setShutdown] = useState(null)
@@ -34,14 +36,14 @@ export function useWindowControls({ setHistory, setInput }) {
             (text) => setShutdownLines((prev) => [...prev, text]),
             () => {
               setShutdown(null)
-              setHistory(INITIAL_HISTORY)
+              setHistory(createInitialHistory())
               setInput('')
             },
           )
         }, 1500)
       },
     )
-  }, [shutdown, runSequence, setHistory, setInput])
+  }, [shutdown, runSequence, setHistory, setInput, t])
 
   const handleMinimize = useCallback(() => {
     if (shutdown) return

@@ -7,11 +7,6 @@ export const fadeIn = keyframes`
   to   { opacity: 1; transform: translateY(0); }
 `
 
-export const scanline = keyframes`
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-`
-
 export const pulse = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
@@ -82,14 +77,15 @@ export const TerminalWindow = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      transparent 0%,
-      ${({ theme }) => theme.colors.cyanAlpha3} 50%,
-      transparent 100%
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      ${({ theme }) => theme.colors.cyanAlpha3} 2px,
+      ${({ theme }) => theme.colors.cyanAlpha3} 4px
     );
-    animation: ${scanline} 4s linear infinite;
     pointer-events: none;
-    will-change: transform;
+    opacity: 0.4;
   }
 `
 
@@ -176,6 +172,7 @@ export const StatusOnline = styled.span`
 // ── Body ──
 
 export const TerminalBody = styled.div`
+  position: relative;
   padding: 20px;
   flex: 1;
   overflow-y: auto;
@@ -192,8 +189,11 @@ export const TerminalBody = styled.div`
 `
 
 export const OutputLine = styled.div`
-  animation: ${fadeIn} 0.3s ease;
   margin-bottom: 2px;
+
+  &:last-of-type {
+    animation: ${fadeIn} 0.3s ease;
+  }
 `
 
 // ── Text Tokens ──
@@ -254,6 +254,11 @@ export const InputLine = styled.div`
   margin-top: 4px;
 `
 
+export const InputWrapper = styled.div`
+  position: relative;
+  flex: 1;
+`
+
 export const TerminalInput = styled.input`
   background: transparent;
   border: none;
@@ -261,8 +266,47 @@ export const TerminalInput = styled.input`
   color: ${({ theme }) => theme.colors.textPrimary};
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 0.8rem;
-  flex: 1;
+  width: 100%;
   caret-color: ${({ theme }) => theme.colors.cyan};
+`
+
+export const AutocompleteDropdown = styled.div`
+  position: absolute;
+  ${({ $dropUp }) => ($dropUp ? 'bottom: calc(100% + 6px);' : 'top: calc(100% + 6px);')}
+  left: 0;
+  min-width: 240px;
+  max-height: 180px;
+  overflow-y: auto;
+  background: ${({ theme }) => theme.colors.bgCard};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 8px;
+  box-shadow: 0 8px 24px ${({ theme }) => theme.colors.shadow};
+  z-index: 100;
+  padding: 4px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.border};
+    border-radius: 2px;
+  }
+`
+
+export const AutocompleteItem = styled.div`
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  font-family: ${({ theme }) => theme.fonts.mono};
+  color: ${({ $active, theme }) => ($active ? theme.colors.cyan : theme.colors.textSecondary)};
+  background: ${({ $active, theme }) => ($active ? theme.colors.bgSecondary : 'transparent')};
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.cyan};
+    background: ${({ theme }) => theme.colors.bgSecondary};
+  }
 `
 
 // ── Help ──
@@ -291,6 +335,14 @@ export const SuggestionBar = styled.div`
   padding: 10px 16px;
   border-top: 1px solid ${({ theme }) => theme.colors.border};
   background: ${({ theme }) => theme.colors.bgCard};
+
+  @media (max-width: 768px) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
 `
 
 export const SuggestionChip = styled.button`
@@ -301,11 +353,17 @@ export const SuggestionChip = styled.button`
   border-radius: 4px;
   font-size: 0.65rem;
   font-family: ${({ theme }) => theme.fonts.mono};
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all 0.2s;
 
   &:hover {
     border-color: ${({ theme }) => theme.colors.cyan};
     color: ${({ theme }) => theme.colors.cyan};
+  }
+
+  @media (max-width: 768px) {
+    white-space: nowrap;
   }
 `
 
@@ -397,3 +455,4 @@ export const DockTitle = styled.span`
   font-family: ${({ theme }) => theme.fonts.mono};
   margin-left: 4px;
 `
+

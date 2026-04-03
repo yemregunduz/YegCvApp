@@ -1,10 +1,14 @@
 import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
+import { useState } from 'react'
 import GlobalStyles from '@/styles/GlobalStyles'
 import { ThemeContextProvider, useTheme } from '@/hooks/useTheme'
+import { LanguageProvider } from '@/hooks/useLanguage'
+import { SoundProvider } from '@/hooks/useKeyboardSound'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Terminal from '@/components/Terminal'
+import Loader from '@/components/Loader'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -23,11 +27,15 @@ const Main = styled.main`
 
 function AppInner() {
   const { theme } = useTheme()
+  const [loading, setLoading] = useState(true)
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <AppWrapper>
+
+      {loading && <Loader onComplete={() => setLoading(false)} />}
+
+      <AppWrapper style={{ visibility: loading ? 'hidden' : 'visible' }}>
         <Navbar />
         <Main>
           <Terminal />
@@ -40,9 +48,13 @@ function AppInner() {
 
 function App() {
   return (
-    <ThemeContextProvider>
-      <AppInner />
-    </ThemeContextProvider>
+    <LanguageProvider>
+      <SoundProvider>
+        <ThemeContextProvider>
+          <AppInner />
+        </ThemeContextProvider>
+      </SoundProvider>
+    </LanguageProvider>
   )
 }
 

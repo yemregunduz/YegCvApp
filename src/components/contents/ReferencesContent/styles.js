@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Grid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 `
 
 export const Card = styled.div`
@@ -13,7 +13,6 @@ export const Card = styled.div`
   background: ${({ theme }) => theme.colors.bgCard};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 12px;
-  position: relative;
   transition: all 0.3s;
 
   &:hover {
@@ -54,46 +53,62 @@ export const Body = styled.div`
   min-width: 0;
 `
 
-export const Quote = styled.p`
-  font-size: 0.72rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
-  line-height: 1.8;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1rem;
-  border-left: 2px solid ${({ theme }) => theme.colors.border};
-  font-style: italic;
-
-  @media (max-width: 576px) {
-    border-left: none;
-    padding-left: 0;
-    text-align: center;
-  }
-`
-
-export const Footer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  @media (max-width: 576px) {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-`
-
-export const Name = styled.span`
-  font-size: 0.75rem;
+export const Name = styled.h3`
+  font-size: 0.85rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.textPrimary};
-`
-
-export const Separator = styled.span`
-  color: ${({ theme }) => theme.colors.textMuted};
-  font-size: 0.65rem;
+  margin-bottom: 2px;
 `
 
 export const Role = styled.span`
-  font-size: 0.65rem;
+  display: block;
+  font-size: 0.7rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+`
+
+export const ContactList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  @media (max-width: 576px) {
+    align-items: center;
+  }
+`
+
+export const ContactItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+
+  @media (max-width: 576px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`
+
+export const ContactIcon = styled.span`
   color: ${({ theme }) => theme.colors.cyan};
+  display: flex;
+  align-items: center;
+`
+
+export const ContactLabel = styled.span`
+  color: ${({ theme }) => theme.colors.textMuted};
+  font-weight: 600;
+  font-size: 0.65rem;
+`
+
+export const ContactLink = styled.a`
+  color: ${({ theme }) => theme.colors.textPrimary};
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.cyan};
+  }
 `

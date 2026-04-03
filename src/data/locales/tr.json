@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "label": "Türkçe",
+    "flag": "🇹🇷"
+  },
+
+  "greeting": "Merhaba! Terminal üzerinden beni tanımak ister misiniz?",
+  "helpHint": "\"help\" yazarak komutları görebilirsiniz.",
+  "commandNotFound": "  bash: {cmd}: komut bulunamadı. \"help\" yazarak komutları görebilirsiniz.",
+
+  "commands": {
+    "help": "Yardım menüsünü göster",
+    "ping yunusemregunduz": "Beni tanı",
+    "ping yunusemre": "Beni tanı",
+    "ping yunus": "Beni tanı",
+    "show skills": "Yetenekleri göster",
+    "show experience": "İş deneyimlerini göster",
+    "show education": "Eğitim bilgilerini göster",
+    "show summary": "Özet bilgilerini göster",
+    "show certificates": "Sertifikaları göster",
+    "show references": "Referansları göster",
+    "show cv": "CV'yi göster",
+    "download cv": "CV'yi indir",
+    "open linkedin": "LinkedIn profilini aç",
+    "open github": "GitHub profilini aç",
+    "copy email": "E-posta adresini kopyala",
+    "copy phone": "Telefon numarasını kopyala",
+    "theme toggle": "Temayı değiştir (açık/koyu)",
+    "theme light": "Açık temaya geç",
+    "theme dark": "Koyu temaya geç",
+    "neofetch": "Sistem bilgilerini göster",
+    "play": "Snake oyunu oyna 🐍",
+    "timeline": "Kariyer zaman çizelgesi",
+    "sound toggle": "Klavye sesini aç/kapat",
+    "sound on": "Klavye sesini aç",
+    "sound off": "Klavye sesini kapat",
+    "lang en": "Switch to English",
+    "lang tr": "Türkçe'ye geç",
+    "clear": "Terminali temizle",
+    "play song": "Rastgele chiptune melodi çal 🎵",
+    "stop song": "Müziği durdur",
+    "sudo hire me": "Easter egg 🥚",
+    "rm -rf boring-cv": "Easter egg 🥚",
+    "cat hobbies": "Easter egg 🥚"
+  },
+
+  "output": {
+    "skillsOpening": "  Yetenekler açılıyor...",
+    "experienceOpening": "  İş deneyimi açılıyor...",
+    "educationOpening": "  Eğitim bilgileri açılıyor...",
+    "summaryOpening": "  Özet bilgileri açılıyor...",
+    "certificatesOpening": "  Sertifikalar açılıyor...",
+    "referencesOpening": "  Referanslar açılıyor...",
+    "linkedinRedirect": "  Yönlendiriliyor... linkedin",
+    "githubRedirect": "  Yönlendiriliyor... github",
+    "cvOpening": "  CV açılıyor...",
+    "cvDownloading": "  CV indiriliyor...",
+    "emailCopied": "  \"{email}\" panoya kopyalandı.",
+    "phoneCopied": "  \"{phone}\" panoya kopyalandı.",
+    "themeLight": "  Açık tema uygulandı.",
+    "themeDark": "  Koyu tema uygulandı.",
+    "themeToggled": "  Tema değiştirildi.",
+    "playStarting": "  🐍 Snake game başlatılıyor...",
+    "soundOn": "  Klavye sesi açıldı.",
+    "soundOff": "  Klavye sesi kapatıldı.",
+    "langSwitched": "  Dil değiştirildi: {lang}",
+    "songPlaying": "  🎵 Chiptune melodi çalıyor...",
+    "songStopped": "  🎵 Müzik durduruldu."
+  },
+
+  "easterEggs": {
+    "sudoHireMe": "  ✅ root erişimi verildi. Tebrikler, işe alındınız! (Keşke bu kadar kolay olsaydı 😄)",
+    "rmRf": "  🗑️ boring-cv siliniyor... Hata: Bu CV zaten sıkıcı değil!",
+    "catHobbies": "  🎮 Oyun | 📚 Kitap | 🎵 Müzik | ☕ Kahve | 🏋️ Spor | 🌍 Seyahat | 💻 Açık Kaynak"
+  },
+
+  "ping": {
+    "personal": "PERSONAL",
+    "skills": "SKILLS",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "name": "name",
+    "role": "role",
+    "location": "location",
+    "email": "email",
+    "phone": "phone",
+    "interests": "interests",
+    "available": "available",
+    "yes": "evet",
+    "no": "hayır"
+  },
+
+  "neofetch": {
+    "role": "Rol",
+    "location": "Konum",
+    "experience": "Deneyim",
+    "languages": "Diller",
+    "editor": "Editör",
+    "terminal": "Terminal",
+    "availableForHire": "İşe Açık",
+    "yes": "Evet",
+    "no": "Hayır",
+    "experienceValue": "~5 yıl",
+    "languagesValue": "Türkçe, İngilizce"
+  },
+
+  "timeline": {
+    "title": "── KARİYER ZAMANÇİZGİSİ ──",
+    "present": "DEVAM"
+  },
+
+  "dock": {
+    "minimized": "simge durumuna küçültüldü"
+  },
+
+  "shutdown": {
+    "saving": "> Oturum kaydediliyor...",
+    "closing": "> Bağlantılar kapatılıyor...",
+    "stopping": "> İşlemler durduruluyor...",
+    "complete": "> Kapatma tamamlandı.",
+    "booting": "> Sistem başlatılıyor...",
+    "loading": "> Modüller yükleniyor...",
+    "initializing": "> Terminal başlatılıyor...",
+    "ready": "> Sistem hazır."
+  },
+
+  "loader": {
+    "lines": [
+      "Sistem başlatılıyor...",
+      "JetBrains Mono fontu yükleniyor...",
+      "Terminal modülleri bağlanıyor...",
+      "Sunucuya bağlanılıyor...",
+      "Uygulama modülleri derleniyor..."
+    ],
+    "ready": "✓ Sistem hazır. Hoş geldiniz."
+  }
+}

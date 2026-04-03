@@ -24,33 +24,57 @@
     },
     "available_for_hire": true
   },
-  "navigation": [
-    {
-      "href": "#terminal",
-      "label": "Terminal"
-    }
-  ],
   "stacks": [
     {
       "icon": "FiServer",
       "title": "Backend",
-      "techs": "C#, .NET Core, Entity Framework, SQL Server, RabbitMQ",
-      "proficiency": 95,
-      "label": "PRO"
+      "techs": [
+        "C#",
+        ".NET Core",
+        "Entity Framework",
+        "Mediatr",
+        "RabbitMQ",
+        "Node.js",
+        "Express.js"
+      ],
+      "experience": "~5 yıl"
     },
     {
       "icon": "FiMonitor",
       "title": "Frontend",
-      "techs": "Angular, AngularJS, ASP.NET Core MVC, Javascript, Typescript, HTML5, Css Frameworks (Bootstrap, Tailwind, CoreUI vs.)",
-      "proficiency": 95,
-      "label": "PRO"
+      "techs": [
+        "Angular",
+        "AngularJS",
+        "ASP.NET Core MVC",
+        "JavaScript",
+        "TypeScript",
+        "HTML5",
+        "Bootstrap",
+        "Tailwind"
+      ],
+      "experience": "~5 yıl",
+      "projects": ""
     },
     {
       "icon": "FiDatabase",
       "title": "Database",
-      "techs": "MsSQL, PostgreSQL, MongoDB, Redis",
-      "proficiency": 85,
-      "label": "PRO"
+      "techs": ["MsSQL", "PostgreSQL", "MongoDB", "Redis"],
+      "experience": "~5 yıl",
+      "projects": ""
+    },
+    {
+      "icon": "FiTool",
+      "title": "Tools",
+      "techs": ["Git", "Postman", "Swagger", "Visual Studio", "VS Code", "Claude"],
+      "experience": "~5 yıl",
+      "projects": ""
+    },
+    {
+      "icon": "FiShare2",
+      "title": "Integration",
+      "techs": ["REST API", "SOAP"],
+      "experience": "~5 yıl",
+      "projects": ""
     }
   ],
   "experiences": [
@@ -90,126 +114,98 @@
   ],
   "certificates": [
     {
-      "title": "Algorithms and Data Structures",
+      "title": "Web Sitesi Kullanılabilirliği",
       "issuer": "BTK Akademi",
-      "instructor": "Sadi Evren Şeker",
-      "date": "2023",
+      "instructor": "",
+      "date": "May 2022",
       "icon": "FiAward",
-      "color": "#00e5ff"
+      "color": "#00e5ff",
+      "certificateId": "ZA1UMD2MjX"
     },
     {
-      "title": "Advanced .NET Core Development",
-      "issuer": "Udemy",
-      "instructor": "Engin Demiroğ",
-      "date": "2022",
-      "icon": "FiAward",
-      "color": "#e040fb"
-    },
-    {
-      "title": "Angular - The Complete Guide",
-      "issuer": "Udemy",
-      "instructor": "Gencay Yıldız",
-      "date": "2022",
-      "icon": "FiAward",
-      "color": "#00ff88"
-    },
-    {
-      "title": "SQL Server Performance Tuning",
+      "title": "Google Flutter ile Mobil Uygulama Kursu",
       "issuer": "BTK Akademi",
-      "instructor": "Ömer Çolakoğlu",
-      "date": "2021",
+      "instructor": "",
+      "date": "May 2022",
       "icon": "FiAward",
-      "color": "#8b5cf6"
+      "color": "#e040fb",
+      "certificateId": "bx1hGKXmgZ"
+    },
+    {
+      "title": "Angular ile WEB Programcılığı",
+      "issuer": "BTK Akademi",
+      "instructor": "",
+      "date": "May 2022",
+      "icon": "FiAward",
+      "color": "#00ff88",
+      "certificateId": "XV1hWXpvwm"
+    },
+    {
+      "title": "C#",
+      "issuer": "BTK Akademi",
+      "instructor": "",
+      "date": "May 2022",
+      "icon": "FiAward",
+      "color": "#8b5cf6",
+      "certificateId": "PVghbZEgbm"
+    },
+    {
+      "title": "Uygulamalar ile SQL Öğreniyorum",
+      "issuer": "BTK Akademi",
+      "instructor": "",
+      "date": "Oca 2021",
+      "icon": "FiAward",
+      "color": "#f59e0b",
+      "certificateId": "BozfG8Wbzw"
     }
   ],
   "references": [
     {
       "name": "Süleyman Yalçın",
-      "role": "Team Lead @ Mikrogrup",
-      "quote": "Yunus, teknik bilgisi ve problem çözme becerisiyle ekibimizin en değerli üyelerinden biri. Karmaşık projeleri zamanında ve kaliteli şekilde teslim eder.",
+      "role": "Mikrogrup - Yazılım Geliştirme Yöneticisi",
+      "phone": "+90 543 690 6469",
+      "email": "s.yalcin@teamsystem.com",
       "avatar": "SY"
-    },
-    {
-      "name": "Mehmet Kaya",
-      "role": "CTO @ Firisbe Payment Systems",
-      "quote": "React migration sürecinde gösterdiği liderlik ve teknik yetkinlik takdire şayan. Hem frontend hem backend'de güçlü bir mühendis.",
-      "avatar": "MK"
-    },
-    {
-      "name": "Elif Demir",
-      "role": "Project Manager @ Morphosium",
-      "quote": "İletişim becerisi yüksek, deadline'lara sadık ve sürekli öğrenmeye açık bir yazılımcı. Birlikte çalışmak her zaman keyifli.",
-      "avatar": "ED"
     }
   ],
+  "asciiLogo": "    ██╗   ██╗███████╗ ██████╗\n    ╚██╗ ██╔╝██╔════╝██╔════╝\n     ╚████╔╝ █████╗  ██║  ███╗\n      ╚██╔╝  ██╔══╝  ██║   ██║\n       ██║   ███████╗╚██████╔╝\n       ╚═╝   ╚══════╝ ╚═════╝",
   "terminal": {
-    "name": "Yunus Emre Gündüz",
+    "name": "YEGunduz",
     "greeting": "Merhaba! Terminal üzerinden beni tanımak ister misiniz?",
     "commands": [
-      {
-        "command": "help",
-        "description": "Yardım menüsünü göster"
-      },
-      {
-        "command": "ping yunusemregunduz",
-        "description": "Beni tanı"
-      },
-      {
-        "command": "show skills",
-        "description": "Yetenekleri göster"
-      },
-      {
-        "command": "show experience",
-        "description": "İş deneyimlerini göster"
-      },
-      {
-        "command": "show education",
-        "description": "Eğitim bilgilerini göster"
-      },
-      {
-        "command": "show summary",
-        "description": "Özet bilgilerini göster"
-      },
-      {
-        "command": "show certificates",
-        "description": "Sertifikaları göster"
-      },
-      {
-        "command": "show references",
-        "description": "Referansları göster"
-      },
-      {
-        "command": "show cv",
-        "description": "CV'yi göster"
-      },
-      {
-        "command": "download cv",
-        "description": "CV'yi indir"
-      },
-      {
-        "command": "open linkedin",
-        "description": "LinkedIn profilini aç"
-      },
-      {
-        "command": "open github",
-        "description": "GitHub profilini aç"
-      },
-      {
-        "command": "copy email",
-        "description": "E-posta adresini kopyala"
-      },
-      {
-        "command": "copy phone",
-        "description": "Telefon numarasını kopyala"
-      },
-      {
-        "command": "theme toggle",
-        "description": "Temayı değiştir (açık/koyu)"
-      },
-      {
-        "command": "clear",
-        "description": "Terminali temizle"
-      }
+      { "command": "help", "chip": true },
+      { "command": "ping yunusemregunduz", "chip": true },
+      { "command": "neofetch", "chip": true },
+      { "command": "show skills", "chip": true },
+      { "command": "show experience", "chip": true },
+      { "command": "show education", "chip": true },
+      { "command": "show summary", "chip": true },
+      { "command": "show certificates", "chip": true },
+      { "command": "show references", "chip": true },
+      { "command": "show cv", "chip": true },
+      { "command": "download cv", "chip": true },
+      { "command": "open linkedin", "chip": true },
+      { "command": "open github", "chip": true },
+      { "command": "copy email" },
+      { "command": "copy phone" },
+      { "command": "theme toggle", "chip": true },
+      { "command": "play" },
+      { "command": "timeline" },
+      { "command": "sound toggle", "chip": true },
+      { "command": "lang en", "chip": true },
+      { "command": "lang tr", "chip": true },
+      { "command": "theme light" },
+      { "command": "theme dark" },
+      { "command": "sound on" },
+      { "command": "sound off" },
+      { "command": "ping yunusemre" },
+      { "command": "ping yunus" },
+      { "command": "play song" },
+      { "command": "stop song" },
+      { "command": "sudo hire me" },
+      { "command": "rm -rf boring-cv" },
+      { "command": "cat hobbies" },
+      { "command": "clear", "chip": true }
     ]
   }
 }

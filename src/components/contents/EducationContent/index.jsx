@@ -1,5 +1,5 @@
 import cvData from '@/data/cv.json'
-import { getIcon } from '@/data/icons'
+import { getIcon } from '@/utils/icons'
 import * as S from '@/components/contents/EducationContent/styles'
 
 export default function EducationContent() {

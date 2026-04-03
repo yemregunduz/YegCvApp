@@ -10,10 +10,6 @@ export const Nav = styled.nav`
   backdrop-filter: blur(10px);
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   padding: 0 1rem;
-
-  @media (max-width: 768px) {
-    padding: 0 1rem;
-  }
 `
 
 export const NavInner = styled.div`
@@ -24,7 +20,7 @@ export const NavInner = styled.div`
   height: 60px;
 `
 
-export const Logo = styled.div`
+export const LeftSection = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -56,10 +52,10 @@ export const LogoSub = styled.span`
 export const RightSection = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
 `
 
-export const ThemeToggle = styled.button`
+export const IconButton = styled.button`
   background: none;
   border: 1px solid ${({ theme }) => theme.colors.border};
   color: ${({ theme }) => theme.colors.textSecondary};
