@@ -16,6 +16,12 @@ export const CodeHeader = styled.div`
   padding: 12px 16px;
 `
 
+export const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`
+
 export const CodeDots = styled.div`
   display: flex;
   gap: 6px;

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { createInitialHistory } from '@/hooks/useCommands'
 import { useLanguage } from '@/hooks/useLanguage'
-import { SHUTDOWN_LINES, BOOT_LINES } from '@/components/Terminal/constants'
+import { getShutdownLines, getBootLines } from '@/components/Terminal/constants'
 
 export function useWindowControls({ setHistory, setInput }) {
   const { t } = useLanguage()
@@ -23,7 +23,7 @@ export function useWindowControls({ setHistory, setInput }) {
     setShutdown('shutting-down')
 
     runSequence(
-      SHUTDOWN_LINES,
+      getShutdownLines(t),
       (text) => setShutdownLines((prev) => [...prev, text]),
       () => {
         setShutdown('off')
@@ -32,7 +32,7 @@ export function useWindowControls({ setHistory, setInput }) {
         setTimeout(() => {
           setShutdown('booting')
           runSequence(
-            BOOT_LINES,
+            getBootLines(t),
             (text) => setShutdownLines((prev) => [...prev, text]),
             () => {
               setShutdown(null)

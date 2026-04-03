@@ -133,7 +133,7 @@ export const Ribbon = styled.div`
   top: 12px;
   right: -28px;
   background: ${({ $color }) => $color};
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#0a0a0f' : '#ffffff')};
+  color: ${({ theme }) => theme.colors.contrastText};
   font-size: 0.45rem;
   font-weight: 800;
   letter-spacing: 2px;

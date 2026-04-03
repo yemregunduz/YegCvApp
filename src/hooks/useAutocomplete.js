@@ -1,33 +1,54 @@
 import { useState, useCallback } from 'react'
 
-export function useAutocomplete(items = [], options = { includeExact: true}) {
-  const [selectedIndex, setSelectedIndex] = useState(0)
+function fuzzyMatch(item, query) {
+  const lower = item.toLowerCase()
+  let qi = 0
+  let score = 0
+  let lastMatchIndex = -1
+  const matchIndices = []
+
+  for (let i = 0; i < lower.length && qi < query.length; i++) {
+    if (lower[i] === query[qi]) {
+      score += 1
+      if (lastMatchIndex === i - 1) score += 2
+      if (i === 0 || lower[i - 1] === ' ') score += 3
+      lastMatchIndex = i
+      matchIndices.push(i)
+      qi++
+    }
+  }
+
+  return qi === query.length ? { score, matchIndices } : null
+}
+
+export function useAutocomplete(items = []) {
+  const [selectedIndex, setSelectedIndex] = useState(-1)
   const [active, setActive] = useState(false)
 
-const getSuggestions = useCallback(
-  (input) => {
-    const trimmed = input.trim().toLowerCase()
-    if (!trimmed) return []
+  const getSuggestions = useCallback(
+    (input) => {
+      const trimmed = input.trim().toLowerCase()
+      if (!trimmed) return []
 
-    return items.filter((item) => {
-      const lower = item.toLowerCase()
-      if (!lower.startsWith(trimmed)) return false
-
-      if (!options.includeExact && lower === trimmed) return false
-
-      return true
-    })
-  },
-  [items, options.includeExact],
-)
+      return items
+        .map((item) => {
+          const result = fuzzyMatch(item, trimmed)
+          if (!result) return null
+          return { item, score: result.score, matchIndices: result.matchIndices }
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.score - a.score)
+    },
+    [items],
+  )
 
   const reset = useCallback(() => {
-    setSelectedIndex(0)
+    setSelectedIndex(-1)
     setActive(false)
   }, [])
 
   const activate = useCallback(() => {
-    setSelectedIndex(0)
+    setSelectedIndex(-1)
     setActive(true)
   }, [])
 

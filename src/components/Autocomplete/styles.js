@@ -33,6 +33,11 @@ export const Dropdown = styled.div`
   }
 `
 
+export const Match = styled.span`
+  color: ${({ theme }) => theme.colors.cyan};
+  font-weight: 700;
+`
+
 export const Item = styled.div`
   padding: 6px 12px;
   font-size: 0.72rem;

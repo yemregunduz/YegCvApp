@@ -135,13 +135,7 @@ export default function SummaryContent() {
   return (
     <S.CodeWindow>
       <S.CodeHeader>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}
-        >
+        <S.HeaderLeft>
           <S.CodeDots>
             <S.Dot $color="#ff5f57" />
             <S.Dot $color="#febc2e" />
@@ -151,7 +145,7 @@ export default function SummaryContent() {
             {cvData.personal.name.replace(/\s+/g, '_')}
             .json
           </S.FileName>
-        </div>
+        </S.HeaderLeft>
         <S.CopyButton onClick={handleCopy}>{copied ? 'Copied!' : 'Copy'}</S.CopyButton>
       </S.CodeHeader>
       <S.CodeBody>

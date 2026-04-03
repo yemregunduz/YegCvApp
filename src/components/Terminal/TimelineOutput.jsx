@@ -85,7 +85,7 @@ function TimelineOutput() {
             </Rail>
             <Content>
               <Period $active={isActive}>
-                {exp.period.replace('DEVAM EDİYOR', t.timeline.present)}
+                {exp.period.replace(/DEVAM ED[İI]YOR/, t.timeline.present)}
               </Period>
               <Role>
                 {role} @ <Company>{company}</Company>

@@ -12,7 +12,8 @@ import Modal from '@/components/Modal'
 import Autocomplete from '@/components/Autocomplete'
 import TerminalLine from '@/components/Terminal/TerminalLine'
 import ShutdownOverlay from '@/components/Terminal/ShutdownOverlay'
-import { POPUP_CONFIG } from '@/components/Terminal/constants'
+import { getPopupConfig } from '@/components/Terminal/constants'
+import { useLanguage } from '@/hooks/useLanguage'
 import * as S from '@/components/Terminal/styles'
 
 const { terminal } = cvData
@@ -35,6 +36,7 @@ function Terminal() {
     setDropUp(spaceBelow < 200)
   }, [])
 
+  const { t } = useLanguage()
   const statusText = useTypingEffect(cvData.personal.status)
   const { toggleTheme, setTheme } = useTheme()
   const soundControls = useKeyboardSound()
@@ -110,7 +112,7 @@ function Terminal() {
   }
 
 
-  const popupConfig = popup ? POPUP_CONFIG[popup] : null
+  const popupConfig = popup ? getPopupConfig(t)[popup] : null
 
   if (isMinimized) {
     return (
@@ -119,7 +121,7 @@ function Terminal() {
           <S.DockDot $color="#ff5f56" />
           <S.DockDot $color="#ffbd2e" />
           <S.DockDot $color="#27c93f" />
-          <S.DockTitle>{terminal.name} — Pencereyi açmak için tıkla</S.DockTitle>
+          <S.DockTitle>{terminal.name} — {t.dock.minimized}</S.DockTitle>
         </S.DockBar>
       </S.Section>
     )

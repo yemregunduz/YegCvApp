@@ -15,6 +15,7 @@ const AppWrapper = styled.div`
   flex-direction: column;
   height: 100dvh;
   overflow: hidden;
+  visibility: ${({ $hidden }) => ($hidden ? 'hidden' : 'visible')};
 `
 
 const Main = styled.main`
@@ -35,7 +36,7 @@ function AppInner() {
 
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
-      <AppWrapper style={{ visibility: loading ? 'hidden' : 'visible' }}>
+      <AppWrapper $hidden={loading}>
         <Navbar />
         <Main>
           <Terminal />

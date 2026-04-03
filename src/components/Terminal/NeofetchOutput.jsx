@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import styled from 'styled-components'
 import cvData from '@/data/cv.json'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -90,10 +90,7 @@ function NeofetchOutput() {
   const { mode } = useTheme()
   const nf = t.neofetch
 
-  const allTechs = stacks
-    .flatMap((s) => s.techs)
-    .slice(0, 8)
-    .join(', ')
+  const allTechs = useMemo(() => stacks.flatMap((s) => s.techs).slice(0, 8).join(', '), [])
 
   return (
     <Wrapper>
@@ -119,18 +116,18 @@ function NeofetchOutput() {
         </Row>
         <Row>
           <Label>{nf.editor}</Label>
-          <Value>VS Code / Visual Studio</Value>
+          <Value>{nf.editorValue}</Value>
         </Row>
         <Row>
           <Label>{nf.terminal}</Label>
-          <Value>YEG Terminal v1.0</Value>
+          <Value>{nf.terminalValue}</Value>
         </Row>
         <Row>
-          <Label>Theme</Label>
+          <Label>{nf.theme}</Label>
           <Value>{mode === 'dark' ? 'Dark' : 'Light'}</Value>
         </Row>
         <Row>
-          <Label>Stack</Label>
+          <Label>{nf.stack}</Label>
           <Value>{allTechs}</Value>
         </Row>
         <Row>

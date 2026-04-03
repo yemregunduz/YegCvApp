@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 
 // Musical scales (frequencies in Hz)
 const SCALES = {
@@ -127,6 +127,14 @@ export function useChiptune() {
     timeoutsRef.current.push(endTid)
 
     return scaleKey
+  }, [stop])
+
+  useEffect(() => {
+    return () => {
+      stop()
+      ctxRef.current?.close()
+      ctxRef.current = null
+    }
   }, [stop])
 
   return { playing, play, stop }

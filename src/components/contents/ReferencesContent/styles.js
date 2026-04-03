@@ -40,7 +40,7 @@ export const Avatar = styled.div`
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 1px;
-  color: ${({ theme }) => (theme.mode === 'dark' ? '#0a0a0f' : '#ffffff')};
+  color: ${({ theme }) => theme.colors.contrastText};
   background: linear-gradient(
     135deg,
     ${({ theme }) => theme.colors.cyan},

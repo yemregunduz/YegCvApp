@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import styled from 'styled-components'
 import cvData from '@/data/cv.json'
+import { useLanguage } from '@/hooks/useLanguage'
 import {
   TermKey,
   Value,
@@ -94,9 +95,11 @@ const ExpBlock = styled.div`
 // ── Component ──
 
 function PingOutput({ copiedKey, onCopy }) {
+  const { t } = useLanguage()
+
   return (
     <PingBlock>
-      <SectionHeader>── PERSONAL ──</SectionHeader>
+      <SectionHeader>── {t.ping.personal} ──</SectionHeader>
       <Row>
         <TermKey>name</TermKey>
         <Separator> : </Separator>
@@ -117,7 +120,7 @@ function PingOutput({ copiedKey, onCopy }) {
         <Separator> : </Separator>
         <LinkValue href={`mailto:${personal.email}`}>{personal.email}</LinkValue>
         <CopyChip onClick={() => onCopy(personal.email, 'email')}>
-          {copiedKey === 'email' ? 'kopyalandı' : 'kopyala'}
+          {copiedKey === 'email' ? t.ping.copied : t.ping.copy}
         </CopyChip>
       </Row>
       <Row>
@@ -125,7 +128,7 @@ function PingOutput({ copiedKey, onCopy }) {
         <Separator> : </Separator>
         <LinkValue href={`tel:${personal.phone}`}>{personal.phone}</LinkValue>
         <CopyChip onClick={() => onCopy(personal.phone, 'phone')}>
-          {copiedKey === 'phone' ? 'kopyalandı' : 'kopyala'}
+          {copiedKey === 'phone' ? t.ping.copied : t.ping.copy}
         </CopyChip>
       </Row>
       <Row>
@@ -155,7 +158,7 @@ function PingOutput({ copiedKey, onCopy }) {
 
       <Divider />
 
-      <SectionHeader>── SKILLS ──</SectionHeader>
+      <SectionHeader>── {t.ping.skills} ──</SectionHeader>
       {cvData.stacks.map((stack) => (
         <Row key={stack.title}>
           <TermKey>{stack.title.toLowerCase().padEnd(10)}</TermKey>
@@ -166,7 +169,7 @@ function PingOutput({ copiedKey, onCopy }) {
 
       <Divider />
 
-      <SectionHeader>── EXPERIENCE ──</SectionHeader>
+      <SectionHeader>── {t.ping.experience} ──</SectionHeader>
       {cvData.experiences.map((exp, idx) => (
         <ExpBlock key={idx}>
           <Row>
@@ -181,7 +184,7 @@ function PingOutput({ copiedKey, onCopy }) {
 
       <Divider />
 
-      <SectionHeader>── EDUCATION ──</SectionHeader>
+      <SectionHeader>── {t.ping.education} ──</SectionHeader>
       {cvData.education.map((edu, idx) => (
         <EduLine key={idx}>
           <EduTitle>{edu.title}</EduTitle>

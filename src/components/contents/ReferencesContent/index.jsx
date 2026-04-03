@@ -1,8 +1,11 @@
 import { FiPhone, FiMail } from 'react-icons/fi'
 import cvData from '@/data/cv.json'
+import { useLanguage } from '@/hooks/useLanguage'
 import * as S from '@/components/contents/ReferencesContent/styles'
 
 export default function ReferencesContent() {
+  const { t } = useLanguage()
+
   return (
     <S.Grid>
       {cvData.references.map((ref, i) => (
@@ -17,7 +20,7 @@ export default function ReferencesContent() {
                   <S.ContactIcon>
                     <FiPhone size={13} />
                   </S.ContactIcon>
-                  <S.ContactLabel>Telefon :</S.ContactLabel>
+                  <S.ContactLabel>{t.references.phone} :</S.ContactLabel>
                   <S.ContactLink href={`tel:${ref.phone}`}>{ref.phone}</S.ContactLink>
                 </S.ContactItem>
               )}
@@ -26,7 +29,7 @@ export default function ReferencesContent() {
                   <S.ContactIcon>
                     <FiMail size={13} />
                   </S.ContactIcon>
-                  <S.ContactLabel>Email :</S.ContactLabel>
+                  <S.ContactLabel>{t.references.email} :</S.ContactLabel>
                   <S.ContactLink href={`mailto:${ref.email}`}>{ref.email}</S.ContactLink>
                 </S.ContactItem>
               )}

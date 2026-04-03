@@ -87,7 +87,9 @@
     "interests": "interests",
     "available": "available",
     "yes": "yes",
-    "no": "no"
+    "no": "no",
+    "copied": "copied",
+    "copy": "copy"
   },
 
   "neofetch": {
@@ -97,11 +99,35 @@
     "languages": "Languages",
     "editor": "Editor",
     "terminal": "Terminal",
+    "theme": "Theme",
+    "stack": "Stack",
     "availableForHire": "Hire Me",
     "yes": "Yes",
     "no": "No",
     "experienceValue": "~5 years",
-    "languagesValue": "Turkish, English"
+    "languagesValue": "Turkish, English",
+    "editorValue": "VS Code / Visual Studio",
+    "terminalValue": "YEG Terminal v1.0"
+  },
+
+  "popup": {
+    "skills": "SKILLS",
+    "experience": "EXPERIENCE",
+    "education": "EDUCATION",
+    "summary": "SUMMARY",
+    "certificates": "CERTIFICATES",
+    "references": "REFERENCES",
+    "snake": "SNAKE GAME 🐍"
+  },
+
+  "references": {
+    "phone": "Phone",
+    "email": "Email"
+  },
+
+  "certificates": {
+    "showCertificate": "Show certificate",
+    "verified": "VERIFIED"
   },
 
   "timeline": {
@@ -110,7 +136,7 @@
   },
 
   "dock": {
-    "minimized": "minimized"
+    "minimized": "Click to open window"
   },
 
   "shutdown": {

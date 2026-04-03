@@ -2,13 +2,28 @@ import { useRef, useEffect, useMemo, useImperativeHandle, forwardRef } from 'rea
 import { useAutocomplete } from '@/hooks/useAutocomplete'
 import * as S from '@/components/Autocomplete/styles'
 
+function HighlightedText({ text, matchIndices }) {
+  const matchSet = new Set(matchIndices)
+  return (
+    <>
+      {text.split('').map((char, i) =>
+        matchSet.has(i) ? (
+          <S.Match key={i}>{char}</S.Match>
+        ) : (
+          <span key={i}>{char}</span>
+        ),
+      )}
+    </>
+  )
+}
+
 const Autocomplete = forwardRef(({ input, items, onComplete, onSelect, dropUp }, ref) => {
   const autocomplete = useAutocomplete(items)
   const suggestions = useMemo(() => autocomplete.getSuggestions(input), [input, autocomplete])
   const dropdownRef = useRef(null)
 
   useEffect(() => {
-    if (!dropdownRef.current) return
+    if (!dropdownRef.current || autocomplete.selectedIndex < 0) return
     const activeItem = dropdownRef.current.children[autocomplete.selectedIndex]
     if (activeItem) activeItem.scrollIntoView({ block: 'nearest' })
   }, [autocomplete.selectedIndex])
@@ -17,14 +32,15 @@ const Autocomplete = forwardRef(({ input, items, onComplete, onSelect, dropUp },
     handleKeyDown(e) {
       if (e.key === 'Tab' && suggestions.length > 0) {
         e.preventDefault()
-        onComplete(suggestions[autocomplete.active ? autocomplete.selectedIndex : 0])
+        const tabIndex = autocomplete.selectedIndex >= 0 ? autocomplete.selectedIndex : 0
+        onComplete(suggestions[tabIndex].item)
         autocomplete.reset()
         return true
       }
 
-      if (e.key === 'Enter' && suggestions.length > 0 && autocomplete.active) {
+      if (e.key === 'Enter' && suggestions.length > 0 && autocomplete.active && autocomplete.selectedIndex >= 0) {
         e.preventDefault()
-        onComplete(suggestions[autocomplete.selectedIndex])
+        onComplete(suggestions[autocomplete.selectedIndex].item)
         autocomplete.reset()
         return true
       }
@@ -58,17 +74,17 @@ const Autocomplete = forwardRef(({ input, items, onComplete, onSelect, dropUp },
 
   return (
     <S.Dropdown ref={dropdownRef} $dropUp={dropUp}>
-      {suggestions.map((cmd, i) => (
+      {suggestions.map((suggestion, i) => (
         <S.Item
-          key={cmd}
-          $active={i === autocomplete.selectedIndex}
+          key={suggestion.item}
+          $active={autocomplete.selectedIndex >= 0 && i === autocomplete.selectedIndex}
           onClick={(e) => {
             e.stopPropagation()
-            onSelect(cmd)
+            onSelect(suggestion.item)
             autocomplete.reset()
           }}
         >
-          {cmd}
+          <HighlightedText text={suggestion.item} matchIndices={suggestion.matchIndices} />
         </S.Item>
       ))}
     </S.Dropdown>
