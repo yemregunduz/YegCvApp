@@ -10,20 +10,10 @@ export const SkillsGrid = styled.div`
   }
 `
 
-export const SkillCard = styled.div`
-  background: ${({ theme }) => theme.colors.bgCard};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s;
+export const CardInner = styled.div`
   display: flex;
   flex-direction: column;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.cyan};
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors.shadow};
-  }
+  height: 100%;
 `
 
 export const SkillIcon = styled.div`

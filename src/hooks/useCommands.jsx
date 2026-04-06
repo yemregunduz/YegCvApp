@@ -1,7 +1,17 @@
-import { useState, useCallback } from 'react'
+import { useCallback } from 'react'
 import cvData from '@/data/cv.json'
 import cvFile from '@/assets/YunusEmreGunduzCv.pdf'
 import { useLanguage } from '@/hooks/useLanguage'
+import { useModal } from '@/libs'
+import {
+  SkillsContent,
+  ExperienceContent,
+  EducationContent,
+  SummaryContent,
+  CertificatesContent,
+  ReferencesContent,
+} from '@/components/contents'
+import SnakeGame from '@/components/SnakeGame'
 
 const { personal } = cvData
 
@@ -15,20 +25,24 @@ function createInitialHistory() {
 export function useCommands({
   setHistory,
   setInput,
-  setPopup,
   toggleTheme,
   setTheme,
   soundControls,
   chiptune,
 }) {
   const { t, setLang } = useLanguage()
-  const [copiedKey, setCopiedKey] = useState(null)
+  const modal = useModal()
 
-  const copyToClipboard = useCallback((text, key) => {
-    navigator.clipboard.writeText(text)
-    setCopiedKey(key)
-    setTimeout(() => setCopiedKey(null), 2000)
-  }, [])
+  const showPopup = useCallback(
+    (title, Content, options = {}) => {
+      modal.show({
+        title,
+        content: <Content />,
+        ...options,
+      })
+    },
+    [modal],
+  )
 
   const processCommand = useCallback(
     (cmd) => {
@@ -50,27 +64,27 @@ export function useCommands({
         'ping yunus': () => [{ type: 'fullPing' }],
 
         'show skills': () => {
-          setPopup('skills')
+          showPopup(t.popup.skills, SkillsContent)
           return [{ type: 'success', text: t.output.skillsOpening }]
         },
         'show experience': () => {
-          setPopup('experience')
+          showPopup(t.popup.experience, ExperienceContent)
           return [{ type: 'success', text: t.output.experienceOpening }]
         },
         'show education': () => {
-          setPopup('education')
+          showPopup(t.popup.education, EducationContent)
           return [{ type: 'success', text: t.output.educationOpening }]
         },
         'show summary': () => {
-          setPopup('summary')
+          showPopup(t.popup.summary, SummaryContent, { noPadding: true, noHeaderBorder: true })
           return [{ type: 'success', text: t.output.summaryOpening }]
         },
         'show certificates': () => {
-          setPopup('certificates')
+          showPopup(t.popup.certificates, CertificatesContent)
           return [{ type: 'success', text: t.output.certificatesOpening }]
         },
         'show references': () => {
-          setPopup('references')
+          showPopup(t.popup.references, ReferencesContent)
           return [{ type: 'success', text: t.output.referencesOpening }]
         },
 
@@ -96,11 +110,11 @@ export function useCommands({
         },
 
         'copy email': () => {
-          copyToClipboard(personal.email, 'email')
+          navigator.clipboard.writeText(personal.email)
           return [{ type: 'success', text: t.output.emailCopied(personal.email) }]
         },
         'copy phone': () => {
-          copyToClipboard(personal.phone, 'phone')
+          navigator.clipboard.writeText(personal.phone)
           return [{ type: 'success', text: t.output.phoneCopied(personal.phone) }]
         },
 
@@ -117,13 +131,11 @@ export function useCommands({
           return [{ type: 'success', text: t.output.themeToggled }]
         },
 
-        // ── New features ──
-
         neofetch: () => [{ type: 'neofetch' }],
 
         play: () => {
-          setPopup('snake')
-          return [{ type: 'success', text: '  🐍 Snake game başlatılıyor...' }]
+          showPopup(t.popup.snake, SnakeGame, { noPadding: true })
+          return [{ type: 'success', text: t.output.playStarting }]
         },
 
         timeline: () => [{ type: 'timeline' }],
@@ -160,8 +172,6 @@ export function useCommands({
           return [{ type: 'success', text: t.output.songStopped }]
         },
 
-        // ── Easter eggs ──
-
         'sudo hire me': () => [{ type: 'success', text: t.easterEggs.sudoHireMe }],
         'rm -rf boring-cv': () => [{ type: 'success', text: t.easterEggs.rmRf }],
         'cat hobbies': () => [{ type: 'success', text: t.easterEggs.catHobbies }],
@@ -182,23 +192,12 @@ export function useCommands({
       setHistory((prev) => [...prev, ...newLines])
       setInput('')
     },
-    [
-      setHistory,
-      setInput,
-      setPopup,
-      copyToClipboard,
-      toggleTheme,
-      setTheme,
-      soundControls,
-      chiptune,
-      t,
-      setLang,
-    ],
+    [setHistory, setInput, toggleTheme, setTheme, soundControls, chiptune, t, setLang, showPopup],
   )
 
   const initialHistory = createInitialHistory()
 
-  return { copiedKey, copyToClipboard, processCommand, initialHistory }
+  return { processCommand, initialHistory }
 }
 
 export { createInitialHistory }

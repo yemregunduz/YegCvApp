@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import cvData from '@/data/cv.json'
+import { YEGOverlay } from '@/libs'
 import * as S from '@/components/Loader/styles'
 
 const LINE_DELAYS = [0, 200, 500, 800, 1100]
@@ -42,7 +43,7 @@ export default function Loader({ onComplete }) {
   }, [ready, onComplete])
 
   return (
-    <S.Overlay $fadeOut={fadeOut}>
+    <YEGOverlay $variant="dark" $fadeOut={fadeOut}>
       <S.Container>
         <S.AsciiArt>{cvData.asciiLogo}</S.AsciiArt>
 
@@ -64,6 +65,6 @@ export default function Loader({ onComplete }) {
           <S.ProgressFill $duration={1400} />
         </S.ProgressWrapper>
       </S.Container>
-    </S.Overlay>
+    </YEGOverlay>
   )
 }

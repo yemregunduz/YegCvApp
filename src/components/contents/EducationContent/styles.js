@@ -6,18 +6,8 @@ export const EduGrid = styled.div`
   gap: 2rem;
 `
 
-export const EduCard = styled.div`
+export const CardInner = styled.div`
   text-align: center;
-  padding: 2rem;
-  background: ${({ theme }) => theme.colors.bgCard};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 8px;
-  transition: all 0.3s;
-
-  &:hover {
-    transform: translateY(-4px);
-    border-color: ${({ theme }) => theme.colors.cyan};
-  }
 `
 
 export const EduIcon = styled.div`

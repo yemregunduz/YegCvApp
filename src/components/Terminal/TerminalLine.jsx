@@ -8,7 +8,7 @@ import * as S from '@/components/Terminal/styles'
 
 const { terminal } = cvData
 
-function TerminalLine({ line, copiedKey, copyToClipboard }) {
+function TerminalLine({ line }) {
   const { t } = useLanguage()
 
   switch (line.type) {
@@ -28,7 +28,7 @@ function TerminalLine({ line, copiedKey, copyToClipboard }) {
     case 'fullPing':
       return (
         <S.OutputLine>
-          <PingOutput copiedKey={copiedKey} onCopy={copyToClipboard} />
+          <PingOutput />
         </S.OutputLine>
       )
     case 'help':

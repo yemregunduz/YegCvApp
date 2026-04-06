@@ -21,7 +21,12 @@ function fuzzyMatch(item, query) {
   return qi === query.length ? { score, matchIndices } : null
 }
 
-export function useAutocomplete(items = []) {
+export function useAutocomplete(
+  items = [],
+  options = { includeExact: true } // 👈 default davranış
+) {
+  const { includeExact } = options
+
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const [active, setActive] = useState(false)
 
@@ -32,14 +37,27 @@ export function useAutocomplete(items = []) {
 
       return items
         .map((item) => {
+          const lowerItem = item.toLowerCase()
           const result = fuzzyMatch(item, trimmed)
+
           if (!result) return null
-          return { item, score: result.score, matchIndices: result.matchIndices }
+
+          // 👇 exact match kontrolü artık opsiyonel
+          if (!includeExact && lowerItem === trimmed) return null
+
+          let score = result.score
+
+          // 👇 includeExact açıksa boost verelim (UX için güzel)
+          if (includeExact && lowerItem === trimmed) {
+            score += 1000
+          }
+
+          return { item, score, matchIndices: result.matchIndices }
         })
         .filter(Boolean)
         .sort((a, b) => b.score - a.score)
     },
-    [items],
+    [items, includeExact]
   )
 
   const reset = useCallback(() => {
@@ -60,5 +78,12 @@ export function useAutocomplete(items = []) {
     })
   }, [])
 
-  return { selectedIndex, active, getSuggestions, reset, activate, navigateSuggestion }
+  return {
+    selectedIndex,
+    active,
+    getSuggestions,
+    reset,
+    activate,
+    navigateSuggestion,
+  }
 }

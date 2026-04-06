@@ -6,26 +6,15 @@ export const Grid = styled.div`
   gap: 1.25rem;
 `
 
-export const Card = styled.div`
+export const CardInner = styled.div`
   display: flex;
   gap: 1.25rem;
-  padding: 1.5rem;
-  background: ${({ theme }) => theme.colors.bgCard};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 12px;
-  transition: all 0.3s;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.cyan};
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors.shadow};
-  }
 
   @media (max-width: 576px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1rem;
-    padding: 1.25rem 1rem;
   }
 `
 

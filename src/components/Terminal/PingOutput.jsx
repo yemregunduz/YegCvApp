@@ -2,12 +2,12 @@ import { memo } from 'react'
 import styled from 'styled-components'
 import cvData from '@/data/cv.json'
 import { useLanguage } from '@/hooks/useLanguage'
+import CopyButton from '@/libs/components/CopyButton'
 import {
   TermKey,
   Value,
   SuccessValue,
   LinkValue,
-  SuggestionChip,
   Separator,
   Divider,
 } from '@/components/Terminal/styles'
@@ -82,19 +82,11 @@ const EduYear = styled.span`
   margin-left: 8px;
 `
 
-const CopyChip = styled(SuggestionChip)`
-  margin-left: 8px;
-  padding: 1px 6px;
-  font-size: 0.6rem;
-`
-
 const ExpBlock = styled.div`
   margin-bottom: 8px;
 `
 
-// ── Component ──
-
-function PingOutput({ copiedKey, onCopy }) {
+function PingOutput() {
   const { t } = useLanguage()
 
   return (
@@ -119,17 +111,13 @@ function PingOutput({ copiedKey, onCopy }) {
         <TermKey>email</TermKey>
         <Separator> : </Separator>
         <LinkValue href={`mailto:${personal.email}`}>{personal.email}</LinkValue>
-        <CopyChip onClick={() => onCopy(personal.email, 'email')}>
-          {copiedKey === 'email' ? t.ping.copied : t.ping.copy}
-        </CopyChip>
+        <CopyButton text={personal.email} copyLabel={t.ping.copy} copiedLabel={t.ping.copied} />
       </Row>
       <Row>
         <TermKey>phone</TermKey>
         <Separator> : </Separator>
         <LinkValue href={`tel:${personal.phone}`}>{personal.phone}</LinkValue>
-        <CopyChip onClick={() => onCopy(personal.phone, 'phone')}>
-          {copiedKey === 'phone' ? t.ping.copied : t.ping.copy}
-        </CopyChip>
+        <CopyButton text={personal.phone} copyLabel={t.ping.copy} copiedLabel={t.ping.copied} />
       </Row>
       <Row>
         <TermKey>linkedin</TermKey>

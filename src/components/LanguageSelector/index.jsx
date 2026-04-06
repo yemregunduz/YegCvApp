@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
+import { YEGButton, YEGDropdown, YEGDropdownItem } from '@/libs'
 import * as S from '@/components/LanguageSelector/styles'
 
 function LanguageSelector() {
@@ -19,14 +20,14 @@ function LanguageSelector() {
 
   return (
     <S.Wrapper ref={ref}>
-      <S.Toggle onClick={() => setOpen((p) => !p)} title="Language">
+      <YEGButton $variant="icon" onClick={() => setOpen((p) => !p)} title="Language">
         <S.Flag>{current?.flag}</S.Flag>
-      </S.Toggle>
+      </YEGButton>
 
       {open && (
-        <S.Dropdown>
+        <YEGDropdown>
           {availableLanguages.map((code) => (
-            <S.Option
+            <YEGDropdownItem
               key={code}
               $active={code === lang}
               onClick={() => {
@@ -36,9 +37,9 @@ function LanguageSelector() {
             >
               <S.Flag>{langLabels[code]?.flag}</S.Flag>
               {langLabels[code]?.label}
-            </S.Option>
+            </YEGDropdownItem>
           ))}
-        </S.Dropdown>
+        </YEGDropdown>
       )}
     </S.Wrapper>
   )

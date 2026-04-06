@@ -15,32 +15,6 @@ export const Grid = styled.div`
   }
 `
 
-export const Card = styled.div`
-  position: relative;
-  background: ${({ theme }) => theme.colors.bgCard};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 12px;
-  padding: 1.5rem;
-  overflow: hidden;
-  transition: all 0.3s;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: ${({ $color }) => $color};
-  }
-
-  &:hover {
-    border-color: ${({ $color }) => $color};
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px ${({ theme }) => theme.colors.shadow};
-  }
-`
-
 export const CardHeader = styled.div`
   display: flex;
   align-items: flex-start;
@@ -94,17 +68,6 @@ export const Meta = styled.div`
 export const Issuer = styled.span`
   font-size: 0.68rem;
   color: ${({ theme }) => theme.colors.textSecondary};
-`
-
-export const DateBadge = styled.span`
-  font-size: 0.55rem;
-  color: ${({ $color }) => $color};
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 3px 10px;
-  border: 1px solid ${({ $color }) => $color}44;
-  border-radius: 20px;
-  background: ${({ $color }) => $color}11;
 `
 
 export const VerifyLink = styled.a`

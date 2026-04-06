@@ -1,5 +1,6 @@
 import { useRef, useEffect, useMemo, useImperativeHandle, forwardRef } from 'react'
 import { useAutocomplete } from '@/hooks/useAutocomplete'
+import { YEGDropdown } from '@/libs'
 import * as S from '@/components/Autocomplete/styles'
 
 function HighlightedText({ text, matchIndices }) {
@@ -73,9 +74,14 @@ const Autocomplete = forwardRef(({ input, items, onComplete, onSelect, dropUp },
   if (!autocomplete.active || !suggestions.length) return null
 
   return (
-    <S.Dropdown ref={dropdownRef} $dropUp={dropUp}>
+    <YEGDropdown
+      ref={dropdownRef}
+      $align="left"
+      $direction={dropUp ? 'up' : 'down'}
+      style={{ width: 'max-content', minWidth: '200px', maxWidth: 'calc(100vw - 60px)', maxHeight: '180px' }}
+    >
       {suggestions.map((suggestion, i) => (
-        <S.Item
+        <S.ItemRow
           key={suggestion.item}
           $active={autocomplete.selectedIndex >= 0 && i === autocomplete.selectedIndex}
           onClick={(e) => {
@@ -85,9 +91,9 @@ const Autocomplete = forwardRef(({ input, items, onComplete, onSelect, dropUp },
           }}
         >
           <HighlightedText text={suggestion.item} matchIndices={suggestion.matchIndices} />
-        </S.Item>
+        </S.ItemRow>
       ))}
-    </S.Dropdown>
+    </YEGDropdown>
   )
 })
 

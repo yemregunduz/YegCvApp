@@ -55,21 +55,3 @@ export const RightSection = styled.div`
   gap: 8px;
 `
 
-export const IconButton = styled.button`
-  background: none;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.3s;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.cyan};
-    color: ${({ theme }) => theme.colors.cyan};
-  }
-`

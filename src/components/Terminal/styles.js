@@ -100,44 +100,6 @@ export const TerminalHeader = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
-export const Dot = styled.span`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: ${({ $color }) => $color};
-`
-
-export const DotButton = styled.button`
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: ${({ $color }) => $color};
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.6);
-
-  svg {
-    width: 8px;
-    height: 8px;
-    stroke-width: 3;
-  }
-
-  &:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 8px ${({ $color }) => $color}80;
-    color: rgba(0, 0, 0, 0.9);
-  }
-
-  &:active {
-    transform: scale(0.9);
-  }
-`
-
 export const HeaderTitle = styled.span`
   margin-left: 8px;
   font-size: 0.7rem;
@@ -145,28 +107,8 @@ export const HeaderTitle = styled.span`
   line-height: normal;
 `
 
-export const StatusBadge = styled.div`
-  display: inline-flex;
-  width: max-content;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 12px;
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  border-radius: 20px;
+export const StatusBadgeWrapper = styled.div`
   margin-left: auto;
-  font-size: 0.65rem;
-`
-
-export const StatusDot = styled.span`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: ${({ theme }) => theme.colors.green};
-  animation: ${pulse} 2s infinite;
-`
-
-export const StatusOnline = styled.span`
-  color: ${({ theme }) => theme.colors.green};
 `
 
 // ── Body ──
@@ -287,46 +229,6 @@ export const HelpDesc = styled.span`
   color: ${({ theme }) => theme.colors.textMuted};
 `
 
-// ── Suggestion Bar ──
-
-export const SuggestionBar = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  padding: 10px 16px;
-  border-top: 1px solid ${({ theme }) => theme.colors.border};
-  background: ${({ theme }) => theme.colors.bgCard};
-
-  @media (max-width: 768px) {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    &::-webkit-scrollbar { display: none; }
-  }
-`
-
-export const SuggestionChip = styled.button`
-  background: ${({ theme }) => theme.colors.bgPrimary};
-  border: 1px solid ${({ theme }) => theme.colors.border};
-  color: ${({ theme }) => theme.colors.textSecondary};
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  font-family: ${({ theme }) => theme.fonts.mono};
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: all 0.2s;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.cyan};
-    color: ${({ theme }) => theme.colors.cyan};
-  }
-
-  @media (max-width: 768px) {
-    white-space: nowrap;
-  }
-`
 
 // ── Shutdown / Boot ──
 

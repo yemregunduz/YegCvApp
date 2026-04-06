@@ -2,6 +2,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import cvData from '@/data/cv.json'
 import { useLanguage } from '@/hooks/useLanguage'
 import { getIcon } from '@/utils/icons'
+import { YEGCard, YEGBadge } from '@/libs'
 import * as S from '@/components/contents/CertificatesContent/styles'
 
 const VALIDATE_URL = 'https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId='
@@ -12,7 +13,7 @@ export default function CertificatesContent() {
   return (
     <S.Grid>
       {cvData.certificates.map((cert, i) => (
-        <S.Card key={i} $color={cert.color}>
+        <YEGCard key={i} $accent={cert.color}>
           <S.Ribbon $color={cert.color}>{t.certificates.verified}</S.Ribbon>
           <S.CardHeader>
             <S.IconRing $color={cert.color}>{getIcon(cert.icon)}</S.IconRing>
@@ -23,7 +24,9 @@ export default function CertificatesContent() {
           </S.CardHeader>
           <S.Meta>
             <S.Issuer>{cert.issuer}</S.Issuer>
-            <S.DateBadge $color={cert.color}>{cert.date}</S.DateBadge>
+            <YEGBadge $variant="info" $size="sm">
+              {cert.date}
+            </YEGBadge>
           </S.Meta>
           {cert.certificateId && (
             <S.VerifyLink
@@ -36,7 +39,7 @@ export default function CertificatesContent() {
               {t.certificates.showCertificate}
             </S.VerifyLink>
           )}
-        </S.Card>
+        </YEGCard>
       ))}
     </S.Grid>
   )

@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react'
 import styled from 'styled-components'
 import cvData from '@/data/cv.json'
 import { useLanguage } from '@/hooks/useLanguage'
-import { useTheme } from '@/hooks/useTheme'
+import { useTheme } from '@/libs/hooks/useTheme'
 
 const Wrapper = styled.div`
   display: flex;

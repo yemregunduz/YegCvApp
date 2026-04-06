@@ -2,7 +2,8 @@ import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 import { useState } from 'react'
 import GlobalStyles from '@/styles/GlobalStyles'
-import { ThemeContextProvider, useTheme } from '@/hooks/useTheme'
+import { ThemeContextProvider, useTheme } from '@/libs/hooks/useTheme'
+import { ModalProvider } from '@/libs'
 import { LanguageProvider } from '@/hooks/useLanguage'
 import { SoundProvider } from '@/hooks/useKeyboardSound'
 import Navbar from '@/components/Navbar'
@@ -33,16 +34,17 @@ function AppInner() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <ModalProvider>
+        {loading && <Loader onComplete={() => setLoading(false)} />}
 
-      {loading && <Loader onComplete={() => setLoading(false)} />}
-
-      <AppWrapper $hidden={loading}>
-        <Navbar />
-        <Main>
-          <Terminal />
-        </Main>
-        <Footer />
-      </AppWrapper>
+        <AppWrapper $hidden={loading}>
+          <Navbar />
+          <Main>
+            <Terminal />
+          </Main>
+          <Footer />
+        </AppWrapper>
+      </ModalProvider>
     </ThemeProvider>
   )
 }

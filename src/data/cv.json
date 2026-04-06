@@ -12,18 +12,6 @@
     "interests": ["Frontend Development", "Backend Development"],
     "availableForHire": true
   },
-  "summary": {
-    "identity": "Yunus Emre Gündüz",
-    "role": "Senior Full Stack Developer",
-    "location": "Sakarya, Türkiye",
-    "interests": ["Frontend Development", "Backend Development"],
-    "contact": {
-      "email": "yegunduz@outlook.com",
-      "phone": "0530 928 9942",
-      "linkedin": "https://www.linkedin.com/in/yunus-emre-gunduz/"
-    },
-    "available_for_hire": true
-  },
   "stacks": [
     {
       "icon": "FiServer",

@@ -15,22 +15,6 @@ const fillBar = keyframes`
   to   { width: 100%; }
 `
 
-const fadeOut = keyframes`
-  from { opacity: 1; }
-  to   { opacity: 0; }
-`
-
-export const Overlay = styled.div`
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: ${({ theme }) => theme.colors.bgPrimary};
-  animation: ${({ $fadeOut }) => ($fadeOut ? fadeOut : 'none')} 0.4s ease forwards;
-`
-
 export const Container = styled.div`
   width: 90%;
   max-width: 480px;
